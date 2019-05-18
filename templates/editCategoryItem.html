@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='catalog_styles.css') }}">
+</head>
+
+<body>
+    {% include "header.html" %}
+    {% block content %}
+    <div class="aligner">
+        <div class="aligner-item--fixed">
+            <h1> Edit Menu Item </h1>
+            <div class="aligner-item--fixed-inner">
+                <form action="#" method='post'>
+                    <p>Title:</p>
+                    <input type='text' size='30' name='title' placeholder='{{item.title }}'>
+                    <p>Description:</p>
+                    <input type='text' size='30' name='description' placeholder='{{item.description}}'>
+                    <p>Category:</p>
+                    <select name="category_id">
+                        {% for category in categories %}
+                        <option value="{{category.id}}" SELECTED>{{category.title}}</option>"
+                        {% endfor %}
+                    </select>
+
+                    <input type='submit' value='Edit'>
+                    <a class="submit" href='{{url_for('showCategories')}}'> Cancel </a>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

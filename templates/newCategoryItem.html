@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='catalog_styles.css') }}">
+</head>
+
+<body>
+    {% include "header.html" %}
+    {% block content %}
+    <div class="aligner">
+        <div class="aligner-item--fixed">
+            <h1>New Category Item</h1>
+            <div class="aligner-item--fixed-inner new-cat">
+                <form action="#" method='post'>
+                    <p>Title:</p>
+                    <input type='text' size='30' name='title' required>
+                    <p>Description:</p>
+                    <input type='text' size='30' name='description' required>
+                    <p>Category:</p>
+                    <select name="category_id" required>
+                        {% for category in categories %}
+                        <option value="{{category.id}}" SELECTED>{{category.title}}</option>"
+                        {% endfor %}
+                    </select>
+                    </br>
+                    <input type='submit' value='Create'>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

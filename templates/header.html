@@ -1,0 +1,15 @@
+<html>
+
+<head>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='catalog_styles.css') }}">
+</head>
+<div class="header">
+  <a class="logo" href="{{url_for('showCategories')}}">Catalog Categories</a>
+  <div class="header-right">
+    <a href="{{url_for('gdisconnect')}}">Log Out</a>
+    <a class="active" href="{{url_for('showLogin')}}">Log In</a>
+
+  </div>
+</div>
+
+</html>
