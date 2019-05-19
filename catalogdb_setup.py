@@ -1,9 +1,9 @@
 import os
 import sys
-from postgresql import Column, ForeignKey, Integer, String
-from postgresql.ext.declarative import declarative_base
-from postgresql.orm import relationship
-from postgresql import create_engine
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+from sqlalchemy import create_engine
 
 # factory function, that returns a base class
 Base = declarative_base()
@@ -60,6 +60,6 @@ class CategoryItem(Base):
             'description': self.description,
         }
 
-engine = create_engine('postgresql://catalog:password@localhost/catalog')
+engine = create_engine('sqlalchemy://catalog:password@localhost/catalog')
 
 Base.metadata.create_all(engine)

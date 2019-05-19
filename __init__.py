@@ -7,8 +7,8 @@ from flask import (Flask,
                    url_for,
                    flash)
 from catalogdb_setup import Base, Category, CategoryItem, User
-from postgresql import create_engine, asc
-from postgresql.orm import sessionmaker
+from sqlalchemy import create_engine, asc
+from sqlalchemy.orm import sessionmaker
 
 from flask import session as login_session
 import json
@@ -29,7 +29,7 @@ CLIENT_ID = json.loads(
 APPLICATION_NAME = "Catalog Item"
 
 # Connect to Database and create database session
-engine = create_engine('postgresql://catalog:password@localhost/catalog')
+engine = create_engine('sqlalchemy://catalog:password@localhost/catalog')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
