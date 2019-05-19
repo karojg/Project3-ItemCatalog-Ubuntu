@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+from postgresql import create_engine
+from postgresql.orm import sessionmaker
+from postgresql.ext.declarative import declarative_base
 
 from catalogdb_setup import User, Category, CategoryItem
 

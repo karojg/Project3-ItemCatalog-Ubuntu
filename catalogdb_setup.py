@@ -1,9 +1,9 @@
 import os
 import sys
-from sqlalchemy import Column, ForeignKey, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy import create_engine
+from postgresql import Column, ForeignKey, Integer, String
+from postgresql.ext.declarative import declarative_base
+from postgresql.orm import relationship
+from postgresql import create_engine
 
 # factory function, that returns a base class
 Base = declarative_base()

@@ -7,8 +7,8 @@ from flask import (Flask,
                    url_for,
                    flash)
 from catalogdb_setup import Base, Category, CategoryItem, User
-from sqlalchemy import create_engine, asc
-from sqlalchemy.orm import sessionmaker
+from postgresql import create_engine, asc
+from postgresql.orm import sessionmaker
 
 from flask import session as login_session
 import json
@@ -25,7 +25,7 @@ import requests
 app = Flask(__name__)
 
 CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
+    open('/var/www/catalog/catalog/client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Catalog Item"
 
 # Connect to Database and create database session
